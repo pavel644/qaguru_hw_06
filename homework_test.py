@@ -55,13 +55,14 @@ def test_find_suitable_user():
     найдите пользователя с именем "Olga"
     """
 
-    suitable_users = []
+    suitable_user = {}
 
     for user in users:
         if user.get('name') == 'Olga':
-            suitable_users.append(user)
+            suitable_user = user
+            break
 
-    assert {"name": "Olga", "age": 45} in suitable_users
+    assert suitable_user == {"name": "Olga", "age": 45}
 
     """
     найдите всех пользователей младше 20 лет
